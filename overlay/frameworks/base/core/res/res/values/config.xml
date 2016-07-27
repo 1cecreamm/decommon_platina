@@ -458,4 +458,5 @@
     <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
     <integer name="config_sysCPUTempMultiplier">10</integer>
     <integer name="config_sysBatteryTempMultiplier">10</integer>
+
 </resources>
