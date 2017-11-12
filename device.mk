@@ -358,6 +358,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    init.safailnet.rc \
     fstab.qcom \
     init.device.rc
 
