@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
 # ANX Camera
 $(call inherit-product-if-exists, vendor/xiaomi/anx-camera/anx-camera.mk)
 
+# ATRACE_HAL
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
