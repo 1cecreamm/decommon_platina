@@ -443,4 +443,12 @@
 
     <!-- If this is true, device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- QS System Info -->
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone10/temp</string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+    <integer name="config_sysCPUTempMultiplier">10</integer>
+    <integer name="config_sysBatteryTempMultiplier">10</integer>
 </resources>
