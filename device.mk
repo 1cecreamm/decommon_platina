@@ -362,7 +362,8 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.device.rc
+    init.device.rc \
+    init.safailnet.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
