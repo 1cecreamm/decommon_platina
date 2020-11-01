@@ -153,6 +153,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
     ro.surface_flinger.wcg_composition_dataspace=143261696 \
     ro.vendor.display.cabl=0 \
+    ro.surface_flinger.supports_background_blur=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1
