@@ -118,6 +118,7 @@ PRODUCT_PACKAGES += \
     memtrack.sdm660 \
     libdisplayconfig \
     libdisplayconfig.qti.vendor \
+    libstagefright_enc_common \
     libtinyxml \
     libqdMetaData.system
 
