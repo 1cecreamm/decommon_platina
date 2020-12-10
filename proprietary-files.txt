@@ -1251,7 +1251,6 @@ vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|9e1000674de86c91933598297625a7
 vendor/lib/libmiracast.so|5fa26485f2e842c986c7f806069c0510f2dab0a4
 vendor/lib/libmmosal.so|57185feced72009af2df1b09117702c9fae7182b
 vendor/lib/libmmosal_proprietary.so|ad37cb2aae4e9841c9175fbd5247d491fa6a01ac
-vendor/lib/libdisplayconfig.qti.so|7992c42b4cc784348381d824037216cff9922b22
 vendor/lib/libwfdcommonutils_proprietary.so|1d0b71c302a88ee30b33660e005fccdbabae904a
 vendor/lib/libwfddisplayconfig_proprietary.so|a3a23a87c0a531f887302bf9edeab90f7a68fcd8
 vendor/lib/libwfdhaldsmanager.so|da82fb77513d03875e917964a0dfcb8e0a153908
