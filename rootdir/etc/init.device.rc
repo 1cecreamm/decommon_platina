@@ -82,6 +82,10 @@ on post-fs-data
     copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db	
     chown system system /data/vendor_de/0/fpdata/user.db	
 
+# Camera ID
+    setprop persist.vendor.camera.exif.model "Mi 8 Lite"
+    setprop persist.sys.exif.model "Mi 8 Lite"
+
 # Workaround for camera HAL can not read sys property
 on property:sys.camera.face.unlock=*
     setprop vendor.camera.face.unlock ${sys.camera.face.unlock}
