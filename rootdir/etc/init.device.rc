@@ -35,6 +35,10 @@ on boot
     # Fingerprint
     chmod 0600 /data/misc/fpc/calibration_image.pndat
 
+    # DT2W
+    chmod 0660 /proc/touchpanel/wake_gesture
+    chown system system /proc/touchpanel/wake_gesture
+    
     # Flash
     chmod 0660 /sys/class/leds/led:flash_0/brightness
     chmod 0660 /sys/class/leds/led:flash_1/brightness
