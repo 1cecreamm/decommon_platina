@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_platina.mk
+    $(LOCAL_DIR)/nad_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_platina-user \
-    aosp_platina-userdebug \
-    aosp_platina-eng
+    nad_platina-user \
+    nad_platina-userdebug \
+    nad_platina-eng

@@ -19,8 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common AOSP stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some Nusantara Project stuff
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
 # Inherit from platina device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -28,14 +28,13 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # Inherit AOSP product configuration
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-TARGET_INCLUDE_WIFI_EXT := true
-TARGET_INCLUDE_STOCK_ARCORE := true
+
+NAD_BUILD_TYPE := OFFICIAL
 
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := platina
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := aosp_platina
+PRODUCT_NAME := nad_platina
 PRODUCT_MODEL := Mi 8 Lite
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
@@ -43,6 +42,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_VENDOR_PRODUCT_NAME := platina
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V12.0.3.0.QDTMIXM release-keys"
+    PRODUCT_NAME="platina" \
+    TARGET_DEVICE="platina" \
+    PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V11.0.1.0.QDTCNXM release-keys"
 
-BUILD_FINGERPRINT := Xiaomi/platina/platina:10/QKQ1.190910.002/V12.0.3.0.QDTMIXM:user/release-keys
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys"
