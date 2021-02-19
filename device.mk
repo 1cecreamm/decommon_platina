@@ -451,4 +451,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/platina/platina.mk)
+$(call inherit-product, vendor/xiaomi/platina/platina-vendor.mk)
