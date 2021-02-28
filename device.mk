@@ -394,6 +394,10 @@ PRODUCT_PACKAGES += \
 # Setup Dalvik VM Configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
+# Soong Namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
