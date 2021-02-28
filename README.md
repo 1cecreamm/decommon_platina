@@ -1,20 +1,23 @@
-This repository contains common device configuration for Xiaomi sdm660-based devices
+Device tree for Xiaomi MI 8 Lite
 
-## Copyright
+Xiaomi MI 8 Lite was announced and released in Sep 2018.
 
-```
-#
-# Copyright (C) 2018 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+## Device specifications
+
+| Device       | Xiaomi Mi 8 Lite                                    |
+| -----------: | :-------------------------------------------------- |
+| SoC          | Qualcomm SDM660 Snapdragon 660                      |
+| CPU          | 4x2.2 GHz Kryo 260 & 4x1.8 GHz Kryo	      	       |
+| GPU          | Adreno 512                                          |
+| Memory       | 4 GB RAM or 6 GB RAM (LPDDR4X)                      |
+| Android      | 8.1 Upgradeable to 10                               |
+| Storage      | 128GB, 64GB emmc 5.1 flash storage  		             |
+| Battery      | Non-removable Li-Po 3350 mAh                  	     |
+| Dimensions   | 156.4 x 75.8 x 7.5 mm                               |
+| Display      | 2280 x 1080 (19:9), 6.26 inch                       |
+| Rear camera 1| 12MP, f/1.9 Dual LED flash                          |
+| Front camera | 24MP, 4 in 1, 1.8µm  		 		                       |
+
+## Device picture
+
+![Xiaomi Mi 8 Lite ](https://i.imgur.com/QtaFf8a.png?2)

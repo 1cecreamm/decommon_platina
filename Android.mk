@@ -16,7 +16,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter jasmine_sprout jason lavender platina twolip wayne whyred,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),platina)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
