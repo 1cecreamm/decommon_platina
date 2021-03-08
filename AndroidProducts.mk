@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nad_platina.mk
+    $(LOCAL_DIR)/cherish_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    nad_platina-user \
-    nad_platina-userdebug \
-    nad_platina-eng
+    cherish_platina-user \
+    cherish_platina-userdebug \
+    cherish_platina-eng
