@@ -119,7 +119,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libdisplayconfig.qti.vendor \
     libtinyxml \
-    libqdMetaData \
     libqdMetaData.system
 
 PRODUCT_PACKAGES += \
