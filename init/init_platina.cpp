@@ -1,6 +1,7 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
    Copyright (c) 2019-2020, The LineageOS Project
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,6 +14,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -37,7 +39,6 @@
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
 
 char const *heapstartsize;
 char const *heapgrowthlimit;
@@ -90,6 +91,13 @@ void property_override(char const prop[], char const value[], bool add = true)
     }
 }
 
+void property_override_dual(char const system_prop[],
+        char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void vendor_load_properties()
 {
     check_device();
@@ -100,4 +108,7 @@ void vendor_load_properties()
     property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
+    
+    property_override("ro.build.description", "xiaomi/platina/platina:10/QKQ1.190910.002/V12.0.3.0.QDTMIXM:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "xiaomi/platina/platina:10/QKQ1.190910.002/V12.0.3.0.QDTMIXM:user/release-keys");
 }

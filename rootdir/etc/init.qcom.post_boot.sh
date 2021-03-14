@@ -402,6 +402,28 @@ function disable_core_ctl() {
     fi
 }
 
+function enable_swap() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    SWAP_ENABLE_THRESHOLD=1048576
+    swap_enable=`getprop ro.vendor.qti.config.swap`
+
+    # Enable swap initially only for 1 GB targets
+    if [ "$MemTotal" -le "$SWAP_ENABLE_THRESHOLD" ] && [ "$swap_enable" == "true" ]; then
+        # Static swiftness
+        echo 1 > /proc/sys/vm/swap_ratio_enable
+        echo 70 > /proc/sys/vm/swap_ratio
+
+        # Swap disk - 200MB size
+        if [ ! -f /data/vendor/swap/swapfile ]; then
+            dd if=/dev/zero of=/data/vendor/swap/swapfile bs=1m count=200
+        fi
+        mkswap /data/vendor/swap/swapfile
+        swapon /data/vendor/swap/swapfile -p 32758
+    fi
+}
+
 function configure_memory_parameters() {
     # Set Memory parameters.
     #
@@ -524,7 +546,7 @@ else
     # Set allocstall_threshold to 0 for all targets.
     # Set swappiness to 100 for all targets
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    #echo 100 > /proc/sys/vm/swappiness
+    echo 100 > /proc/sys/vm/swappiness
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
@@ -5370,18 +5392,3 @@ fi
 misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
 real_path=${misc_link##*>}
 setprop persist.vendor.mmi.misc_dev_path $real_path
-
-# Check panel_name
-panel_model=`cat /sys/class/graphics/fb0/msm_fb_panel_info | grep panel_name`
-default_color = `getprop vendor.display.enable_default_color_mode`
-
-if [ "$panel_model" == "panel_name=nt36672a tianma fhdplus video mode dsi panel" ]; then
-
-        if ["$default_color" == "1"]; then
-        setprop vendor.display.enable_default_color_mode 0
-    fi
-
-    echo "1" > /sys/devices/platform/kcal_ctrl.0/kcal_enable
-        echo "230 230 230" > /sys/devices/platform/kcal_ctrl.0/kcal
-        echo "258" > /sys/devices/platform/kcal_ctrl.0/kcal_sat
-fi

@@ -2,25 +2,13 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.apex.updatable=true
 
-# ART
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.boot-dex2oat-threads=8 \
-    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.dex2oat-filter=quicken \
-    dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.dex2oat64.enabled=true \
-    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.image-dex2oat-filter=quicken \
-    ro.sys.fw.dex2oat_thread_count=8 \
-    ro.vendor.qti.am.reschedule_service=true
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     vendor.audio_hal.period_size=240 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     persist.vendor.audio.fluence.voicecall=true \
-    persist.vendor.audio.fluence.voicerec=false \
+    persist.vendor.audio.fluence.voicerec=true \
     persist.vendor.audio.fluence.speaker=true \
     vendor.audio.tunnel.encode=false \
     persist.vendor.audio.ras.enabled=false \
@@ -96,7 +84,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
-    vendor.audio.adm.buffering.ms=6
+    vendor.audio.adm.buffering.ms=3
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -105,11 +93,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     vendor.bluetooth.soc=cherokee
 
+# Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1 \
+    debug.sf.disable_backpressure=1
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.preview.ubwc=0 \
-    vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2 \
     persist.vendor.bokeh.switch.lux=290 \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.depth.focus.cb=0 \
@@ -125,6 +116,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.imx376_ofilm.low.lux=290 \
     persist.vendor.imx376_sunny.light.lux=275 \
     persist.vendor.imx376_sunny.low.lux=290
+    vendor.video.disable.ubwc=1 \
+    vidc.enc.dcvs.extra-buff-count=2
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -135,67 +128,59 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.vendor.cne.feature=1
 
+# Dex
+PRODUCT_PRODUCT_PROPERTIES += \
+    dalvik.vm.dex2oat64.enabled=true \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.sys.fw.dex2oat_thread_count=8 \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.dex2oat-filter=quicken \
+    dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.image-dex2oat-filter=quicken \
+    dalvik.vm.image-dex2oat-threads=8
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=1 \
+    debug.cpurend.vsync=true \
+    debug.sf.disable_backpressure=0 \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_phase_offset_ns=1500000 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.enable_hwc_vds=1 \
+    debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     ro.opengles.version=196610 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.protected_contents=true
     ro.vendor.display.cabl=0 \
-    debug.cpurend.vsync=true \
-    debug.sf.disable_backpressure=0 \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.enable_fb_ubwc=1
-
-# LMKD
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lmk.low=1001 \
-    ro.lmk.medium=800 \
-    ro.lmk.critical=0 \
-    ro.lmk.critical_upgrade=false \
-    ro.lmk.upgrade_pressure=100 \
-    ro.lmk.downgrade_pressure=100 \
-    ro.lmk.kill_heaviest_task=true\
-    ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true \
-    ro.lmk.log_stats=true \
-    ro.lmk.use_psi=false
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# Graphics
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.egl=adreno \
-    ro.hardware.vulkan=adreno
-
 # GMS
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase.ms=android-xiaomi-rev2 \
     ro.com.google.ime.kb_pad_port_b=1
+
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.hardware.egl=adreno \
+ro.hardware.vulkan=adreno
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1  \
     persist.dbg.wfc_avail_ovr=1
-
-# enable FIFO scheduling for UI and Render threads by default
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.use_fifo_ui=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -258,6 +243,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.zram.first_wb_delay_mins=180 \
     ro.zram.periodic_wb_delay_hours=24
 
-# Zygote preforking
+# Zygote Preforking
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
