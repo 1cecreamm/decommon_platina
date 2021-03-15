@@ -101,6 +101,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.preview.ubwc=0 \
+    vendor.video.disable.ubwc=1 \
+    vidc.enc.dcvs.extra-buff-count=2 \
     persist.vendor.bokeh.switch.lux=290 \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.depth.focus.cb=0 \
@@ -116,8 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.imx376_ofilm.low.lux=290 \
     persist.vendor.imx376_sunny.light.lux=275 \
     persist.vendor.imx376_sunny.low.lux=290
-    vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
