@@ -251,3 +251,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Zygote Preforking
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
+
+# PixelPlusUI OFFICIAL
+ro.ppui.device_name=MI 8 Lite Platina
+ro.ppui.version=3.2
+ro.ppui.version_code=Sapphire
+ro.ppui.is_official=true
+ro.ppui.maintainer_name=1cecreamm
