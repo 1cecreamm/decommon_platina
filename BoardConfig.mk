@@ -126,8 +126,8 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_VERSION := 4.4
 TARGET_KERNEL_SOURCE := kernel/xiaomi/platina
 TARGET_KERNEL_CONFIG := platina_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(PWD)/compiler/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/compiler/bin
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
