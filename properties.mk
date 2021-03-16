@@ -175,8 +175,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.hardware.egl=adreno \
-ro.hardware.vulkan=adreno
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -254,8 +254,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
 # PixelPlusUI OFFICIAL
-ro.ppui.device_name=MI 8 Lite Platina
-ro.ppui.version=3.2
-ro.ppui.version_code=Sapphire
-ro.ppui.is_official=true
-ro.ppui.maintainer_name=1cecreamm
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ppui.version=3.2 \
+    ro.ppui.version_code=Sapphire \
+    ro.ppui.is_official=true \
+    ro.ppui.maintainer_name=1cecreamm \
+    ro.ppui.device_name=MI 8 Lite Platina
