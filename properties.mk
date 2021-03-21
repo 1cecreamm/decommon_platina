@@ -157,7 +157,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.video.disable.ubwc=1 \
     vendor.display.enable_default_color_mode=0 \
-    video.disable.ubwc=1
+    video.disable.ubwc=1 \
+    ro.sf.lcd_density=440
 
 # The default sf phase offset is set to 6ms, to avoid it be included into next
 # vsync threshold, set high fps early sf and next vsync threshold phase offset
