@@ -117,9 +117,12 @@ PRODUCT_PACKAGES += \
     hwcomposer.sdm660 \
     memtrack.sdm660 \
     libdisplayconfig \
-    libtinyxml \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     libqdMetaData \
-    libqdMetaData.system
+    libqdMetaData.system \
+    libstagefright_enc_common \
+    libtinyxml
 
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
@@ -131,7 +134,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
     android.frameworks.displayservice@1.0 \
-    vendor.display.config@1.9.vendor
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor
 
 # Display Calibration
 PRODUCT_COPY_FILES += \
