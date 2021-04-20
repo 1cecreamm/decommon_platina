@@ -153,6 +153,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Peripheral Manager
+TARGET_PER_MGR_ENABLED := true
+
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
 
