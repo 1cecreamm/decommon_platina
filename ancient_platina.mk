@@ -19,8 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common DotOs stuff
-$(call inherit-product, vendor/dot/config/common.mk)
+# Inherit some common Ancient OS stuff
+$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
 
 # Inherit from platina device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -28,12 +28,13 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := platina
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := dot_platina
+PRODUCT_NAME := ancient_platina
 PRODUCT_MODEL := Mi 8 Lite
 
 # PixelExperience Stuffs
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
+ANCIENT_OFFICIAL := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -42,4 +43,4 @@ TARGET_VENDOR_PRODUCT_NAME := platina
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V12.0.3.0.QDTMIXM release-keys"
 
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"
