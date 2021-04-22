@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_platina.mk
+    $(LOCAL_DIR)/ancient_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_platina-user \
-    dot_platina-userdebug \
-    dot_platina-eng
+    ancient_platina-user \
+    ancient_platina-userdebug \
+    ancient_platina-eng
